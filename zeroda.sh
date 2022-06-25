@@ -22,34 +22,48 @@ echo "++++++++++++++++++++++++++++++++++++"
 echo "Proceso de actualización Licencia DA"
 echo "++++++++++++++++++++++++++++++++++++"
 
-echo "creando variable canal para con el canal actual"
+echo "Setting up channel"
 CHANNEL=current
+echo "Done"
+echo ""
 
-echo "creando variable en donde se define el sistema operativo"
+echo "Setting up OS"
 OS_SLUG=linux_amd64
+echo "Done"
+echo ""
 
-echo "Obteniendo el numero de serie de la version actual de directadmin"
+echo "Setting up DA version"
 COMMIT=$(dig +short -t txt "$CHANNEL-version.directadmin.com" | sed 's|.*commit=\([0-9a-f]*\).*|\1|')
 echo "$COMMIT"
+echo ""
 
-echo "Definiendo en enlace de descarga"
+echo "File to download"
 FILE="directadmin_${COMMIT}_${OS_SLUG}.tar.gz"
 echo "$FILE"
 
-echo "Descargando el archivo"
+echo "Downloading file: "
 curl --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
+echo "Done"
+echo ""
 
-echo "Descompresion del archivo dentro de la carpeta /root"
+echo "Untar the file in path: /root"
 tar xzf "/root/${FILE}" -C /usr/local/directadmin
+echo "Done"
+echo ""
 
-echo "arreglando los permisos "
+echo "Setting up permissions "
 /usr/local/directadmin/directadmin permissions || true
+echo "Done"
+echo ""
 
-echo "realiznado el update de la licencia"
+echo "Updating"
 /usr/local/directadmin/scripts/update.sh
+echo "Done"
+echo ""
 
 echo "reiniciando servicio de DirectAdmin"
 service directadmin restart
+
 
 echo ""
 echo "++++++++++++++++++++++++++++++++++++"
