@@ -63,9 +63,11 @@ echo ""
 
 echo "restarting DirectAdmin service"
 service directadmin restart
+echo ""
 
-echo "clean up file"
+echo "clean up files"
 rm "/root/${FILE}"
+echo "Done"
 echo ""
 
 echo ""
