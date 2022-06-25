@@ -19,7 +19,7 @@ echo "                    ˍ▂▃▄▄
 
 echo ""
 echo "++++++++++++++++++++++++++++++++++++"
-echo "Proceso de actualización Licencia DA"
+echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
 
 echo "Setting up channel"
