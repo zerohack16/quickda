@@ -22,12 +22,12 @@ echo "++++++++++++++++++++++++++++++++++++"
 echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
 
-echo "Setting up channel"
+echo "Setting up DA channel to current"
 CHANNEL=current
 echo "Done"
 echo ""
 
-echo "Setting up OS"
+echo "Setting up OS (currently only works for AMD64 and compatible)"
 OS_SLUG=linux_amd64
 echo "Done"
 echo ""
@@ -64,6 +64,9 @@ echo ""
 echo "restarting DirectAdmin service"
 service directadmin restart
 
+echo "clean up file"
+rm "/root/${FILE}"
+echo ""
 
 echo ""
 echo "++++++++++++++++++++++++++++++++++++"
