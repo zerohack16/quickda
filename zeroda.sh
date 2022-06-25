@@ -1,5 +1,7 @@
 #!/bin/bash
 # Descripción: mini script para la validacion de directadmin
+
+
 echo "                    ˍ▂▃▄▄
                    ◢████████◤
           ◢        ██████████▆▄
@@ -18,6 +20,20 @@ echo "                    ˍ▂▃▄▄
     ALL'S RIGHT WITH THE WORLD. ◥"
 
 echo ""
+
+echo "          
+    %  -  
+  :: *++  
+ -     .% 
+ =:     - 
+ =-     - 
+ =.    *% 
+  #  #**  
+   *###   
+********Neubox******** 
+-Supreme web hosting-   
+          "
+
 echo "++++++++++++++++++++++++++++++++++++"
 echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
