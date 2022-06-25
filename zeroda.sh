@@ -61,11 +61,11 @@ echo "Updating"
 echo "Done"
 echo ""
 
-echo "reiniciando servicio de DirectAdmin"
+echo "restarting DirectAdmin service"
 service directadmin restart
 
 
 echo ""
 echo "++++++++++++++++++++++++++++++++++++"
-echo "Licencia de directadmin actualizada"
+echo "Fixed up DirectAdmin License"
 echo "++++++++++++++++++++++++++++++++++++"
