@@ -8,7 +8,7 @@ echo "moving script to right path: "
 mv zeroda.sh /root/
 
 echo "setting up permissions"
-chmod +x zeroda.sh
+chmod +x /root/zeroda.sh
 
 /root/zeroda.sh
 rm /root/zeroda.sh
