@@ -1,0 +1,4 @@
+wget https://raw.githubusercontent.com/zerohack16/quickda/main/quickda.sh
+chmod +x quickda.sh
+./quickda.sh
+rm quickda.sh
