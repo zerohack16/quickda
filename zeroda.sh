@@ -56,6 +56,12 @@ echo "++++++++++++++++++++++++++++++++++++"
 echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
 
+
+echo "fixing date to Mx time zone"
+getunixtime=$(curl "http://worldtimeapi.org/api/timezone/America/Mexico_City"|cut -d"," -f12|cut -d":" -f2);
+echo $getunixtime;
+date +%s -s @$getunixtime;
+
 echo "Setting up DA channel to current"
 CHANNEL=current
 echo "Done"
