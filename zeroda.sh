@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 # Descripción: mini script para la validacion de directadmin
 
 
@@ -82,6 +82,11 @@ FILE="directadmin_${COMMIT}_${OS_SLUG}.tar.gz"
 echo "$FILE"
 
 echo "Downloading file: "
-curl --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
+curl -k --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
 echo "Done"
 echo ""
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++"
+echo "Fixed up DirectAdmin License"
+echo "++++++++++++++++++++++++++++++++++++"
