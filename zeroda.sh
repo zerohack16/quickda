@@ -1,6 +1,7 @@
 #!/bin/bash
 # Descripción: mini script para la validacion de directadmin
 
+
 #echo "                    ˍ▂▃▄▄
 #                   ◢████████◤
 #          ◢        ██████████▆▄
@@ -28,12 +29,18 @@
 #     :::: --- . +++-     
 #     :::-:   ** +#++     
 #     :::::  ****+++.     
+#     ::::   ***+         
 #   -: -:     +=  .. ++   
 #  -=- .             =+   
+#  ---::              .   
 #   . ::          ## :=-  
-# ==++-#            :     
+#   :=            ##:=#-  
+#  ====           :: ---  
+# ==++-#            :    
+#  ===+           +*+.*   
 #   ===          ****%#.  
-#      .         ***#*-    
+#      .         ***#*-   
+#     *#: .  ==  *#***    
 #    .***   ####:*****    
 #     ## .  ####.##+.     
 #        *# #### %#       
@@ -41,17 +48,13 @@
 #                        
 #********Neubox******** 
 #-Supreme web hosting-   
-
+#          "
+#
 
 
 echo "++++++++++++++++++++++++++++++++++++"
 echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
-
-
-echo "checking redhat release "
-centosCheck=$(cat /etc/redhat-release |awk {'print $3'});
-echo "La versión del sistema operativo es : $centosCheck"
 
 
 echo "fixing date to Mx time zone"
@@ -79,35 +82,6 @@ FILE="directadmin_${COMMIT}_${OS_SLUG}.tar.gz"
 echo "$FILE"
 
 echo "Downloading file: "
-curl -k --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
+curl --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
 echo "Done"
 echo ""
-
-echo "Untar the file in path: /root"
-tar xzf "/root/${FILE}" -C /usr/local/directadmin
-echo "Done"
-echo ""
-
-echo "Setting up permissions "
-/usr/local/directadmin/directadmin permissions || true
-echo "Done"
-echo ""
-
-echo "Updating"
-/usr/local/directadmin/scripts/update.sh
-echo "Done"
-echo ""
-
-echo "restarting DirectAdmin service"
-service directadmin restart
-echo ""
-
-echo "clean up files"
-rm "/root/${FILE}"
-echo "Done"
-echo ""
-
-echo ""
-echo "++++++++++++++++++++++++++++++++++++"
-echo "Fixed up DirectAdmin License"
-echo "++++++++++++++++++++++++++++++++++++"
