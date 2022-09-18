@@ -67,9 +67,9 @@ echo "++++++++++++++++++++++++++++++++++++"
 
 
 echo "checking redhat release "
-centosCheck=$(cat /etc/redhat-release);
+centosCheck=$(cat /etc/redhat-release |awk {'print $3'});
 echo "La versión del sistema operativo es : $centosCheck"
-if [ "$centosCheck" = "CentOS release 6.10 \(Final\)" ];
+if [ "$centosCheck" = "6.10" ];
     then
         printf "${RED}";
         echo "  ";
@@ -99,7 +99,7 @@ if [ "$notSupported" = "0" ];
         echo "Done"
         echo ""
 
-        echo "Setting up OS currently only works for AMD64 and compatible"
+        echo "Setting up OS (currently only works for AMD64 and compatible)"
         OS_SLUG=linux_amd64
         echo "Done"
         echo ""
@@ -146,6 +146,7 @@ if [ "$notSupported" = "0" ];
         echo "++++++++++++++++++++++++++++++++++++"
         echo "Fixed up DirectAdmin License"
         echo "++++++++++++++++++++++++++++++++++++"
+        echo ""
     else
-        exit 0;
+        exit 0
 fi
