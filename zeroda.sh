@@ -57,6 +57,8 @@ echo "Fixing up DirectAdmin license"
 echo "++++++++++++++++++++++++++++++++++++"
 
 
+
+
 echo "fixing date to Mx time zone"
 getunixtime=$(curl "http://worldtimeapi.org/api/timezone/America/Mexico_City"|cut -d"," -f12|cut -d":" -f2);
 echo $getunixtime;
@@ -83,6 +85,30 @@ echo "$FILE"
 
 echo "Downloading file: "
 curl -k --location --progress-bar --connect-timeout 10 "https://download.directadmin.com/${FILE}" --output "/root/${FILE}"
+echo "Done"
+echo ""
+
+echo "Untar the file in path: /root"
+tar xzf "/root/${FILE}" -C /usr/local/directadmin
+echo "Done"
+echo ""
+
+echo "Setting up permissions "
+/usr/local/directadmin/directadmin permissions || true
+echo "Done"
+echo ""
+
+echo "Updating"
+/usr/local/directadmin/scripts/update.sh
+echo "Done"
+echo ""
+
+echo "restarting DirectAdmin service"
+service directadmin restart
+echo ""
+
+echo "clean up files"
+rm "/root/${FILE}"
 echo "Done"
 echo ""
 
