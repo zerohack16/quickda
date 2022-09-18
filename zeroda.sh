@@ -88,7 +88,6 @@ fi
 
 if [ "$notSupported" = "0" ];
     then
-
         echo "fixing date to Mx time zone"
         getunixtime=$(curl "http://worldtimeapi.org/api/timezone/America/Mexico_City"|cut -d"," -f12|cut -d":" -f2);
         echo $getunixtime;
