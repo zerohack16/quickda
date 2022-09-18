@@ -99,7 +99,7 @@ if [ "$notSupported" = "0" ];
         echo "Done"
         echo ""
 
-        echo "Setting up OS (currently only works for AMD64 and compatible)"
+        echo "Setting up OS currently only works for AMD64 and compatible"
         OS_SLUG=linux_amd64
         echo "Done"
         echo ""
