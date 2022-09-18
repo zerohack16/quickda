@@ -146,7 +146,6 @@ if [ "$notSupported" = "0" ];
         echo "++++++++++++++++++++++++++++++++++++"
         echo "Fixed up DirectAdmin License"
         echo "++++++++++++++++++++++++++++++++++++"
-        echo ""
     else
         exit 0
 fi
