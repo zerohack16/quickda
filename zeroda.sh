@@ -69,7 +69,7 @@ echo "++++++++++++++++++++++++++++++++++++"
 echo "checking redhat release "
 centosCheck=$(cat /etc/redhat-release);
 echo "La versión del sistema operativo es : $centosCheck"
-if [ "$centosCheck" = "CentOS release 6.10 (Final)" ];
+if [ "$centosCheck" = "CentOS release 6.10 \(Final\)" ];
     then
         printf "${RED}";
         echo "  ";
